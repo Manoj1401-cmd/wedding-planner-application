@@ -1,0 +1,22 @@
+import smtplib
+import schedule
+import time
+
+def send_email():
+    sender_email = "your_email@gmail.com"
+    receiver_email = "guest_email@example.com"
+    password = "yourpassword"
+
+    message = """Subject: Wedding Reminder\n\nYour wedding event is coming up! Stay prepared and excited."""
+
+    with smtplib.SMTP("smtp.gmail.com", 587) as server:
+        server.starttls()
+        server.login(sender_email, password)
+        server.sendmail(sender_email, receiver_email, message)
+
+# Schedule reminder every day at 10 AM
+schedule.every().day.at("10:00").do(send_email)
+
+while True:
+    schedule.run_pending()
+    time.sleep(60)
