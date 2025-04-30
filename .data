@@ -1,0 +1,10 @@
+wedding-planner-app/
+│── src/main/java/com/weddingplanner/
+│   ├── controller/        # Handles API requests
+│   ├── service/           # Business logic
+│   ├── repository/        # DB interaction
+│   ├── models/            # Entity definitions
+│   ├── WeddingPlannerApplication.java  # Main class
+│── src/main/resources/
+│   ├── application.properties  # DB config
+│── pom.xml  # Dependencies
